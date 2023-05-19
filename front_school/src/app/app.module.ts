@@ -17,6 +17,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LayoutComponent } from './components/teacher/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TeacherComponent } from './components/teacher/teacher.component';
     AuthComponent,
     LayoutComponent,
     AdminComponent,
-    TeacherComponent
+    TeacherComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
