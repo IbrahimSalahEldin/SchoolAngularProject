@@ -15,6 +15,8 @@ import { AbsenceComponent } from './components/teacher/absence/absence.component
 import { ClassComponent } from './components/teacher/class/class.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { LayoutComponent } from './components/teacher/layout/layout.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LayoutComponent } from './components/teacher/layout/layout.component';
     AbsenceComponent,
     ClassComponent,
     AuthComponent,
-    LayoutComponent
+    LayoutComponent,
+    AdminComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
