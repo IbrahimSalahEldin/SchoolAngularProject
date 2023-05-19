@@ -18,6 +18,8 @@ import { LayoutComponent } from './components/teacher/layout/layout.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { HeaderComponent } from './components/teacher/layout/header/header.component';
+import { FooterComponent } from './components/teacher/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     LayoutComponent,
     AdminComponent,
     TeacherComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
