@@ -31,7 +31,7 @@ const routes: Routes = [
    
  ]},
  
- {path:'teacher',component:TeacherComponent,children:
+ {path:'',component:TeacherComponent,children:
  [
    {path:'',component:HomeComponent},
    {path:'student',component:StudentComponent},
@@ -43,8 +43,7 @@ const routes: Routes = [
    {path:'edit/user',component:EditUserComponent},
    {path:'**',component:NotfoundComponent}
 ]},
-
-  {path:'login',component:AuthComponent},
+  {path:'/login',component:AuthComponent},
   {path:'**',component:NotfoundComponent}
 ];
 

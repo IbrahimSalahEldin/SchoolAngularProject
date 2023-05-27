@@ -20,6 +20,9 @@ import { TeacherComponent } from './components/teacher/teacher.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HeaderComponent } from './components/teacher/layout/header/header.component';
 import { FooterComponent } from './components/teacher/layout/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { FooterComponent } from './components/teacher/layout/footer/footer.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
