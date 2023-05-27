@@ -10,35 +10,35 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  // currentUser= new BehaviorSubject(null) 
-  // constructor(private _HttpClient:HttpClient,private _Router:Router) {
+  currentUser= new BehaviorSubject(null) 
+  constructor(private _HttpClient:HttpClient,private _Router:Router) {
 
-  //   if(localStorage.getItem('token') != null) {
-  //     this.saveCurrentUser();
-  // }
-  // }
+    if(localStorage.getItem('token') != null) {
+      this.saveCurrentUser();
+  }
+  }
 
-  // login(data:any): Observable<any>{
-  //   return this._HttpClient.post(`${environment.baseUrl}/user/login`,data)
-  // }
+  login(data:any): Observable<any>{
+    return this._HttpClient.post(`${environment.baseUrl}/user/login`,data)
+  }
 
-  // saveCurrentUser()
-  // {
-  //   let token:any = localStorage.getItem('token');
-  //   this.currentUser.next(jwtDecode(token))
-  //   console.log(this.currentUser)
-  // }
+  saveCurrentUser()
+  {
+    let token:any = localStorage.getItem('token');
+    this.currentUser.next(jwtDecode(token))
+    console.log(this.currentUser)
+  }
 
-  // getuser():Observable<User | null>
-  // {
-  //   return this.currentUser.asObservable();
-  // }
+  getuser():Observable<User | null>
+  {
+    return this.currentUser.asObservable();
+  }
 
-  // logout(){
-  //   this.currentUser.next(null)
-  //   localStorage.removeItem('token')
-  //   localStorage.removeItem('isLogin')
-  //   localStorage.removeItem('isUser')
-  //   this._Router.navigate(['/login']);
-  // }
+  logout(){
+    this.currentUser.next(null)
+    localStorage.removeItem('token')
+    localStorage.removeItem('isLogin')
+    localStorage.removeItem('isUser')
+    this._Router.navigate(['/login']);
+  }
 }
