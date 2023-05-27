@@ -1,9 +1,9 @@
 
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth/auth.service';
+// import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
-
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -11,12 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
-  error:boolean=false
-  userData?:any
-  message?:string=''
+ error?:boolean=false;
+  userData?:any;
+  message?:string='';
  constructor(private _AuthService:AuthService ,private _Router:Router){}
-
- ngOnInit() : void{}
 
  loginForm =new FormGroup({
  email:new FormControl(null,[Validators.required]),
@@ -24,37 +22,24 @@ export class AuthComponent {
 })
 submitloginForm(loginForm:FormGroup){
   
- // this._AuthService.login(loginForm.value).subscribe((Response)=>{
- //   if(Response.id){
- //     this.userData = Response;
- //     localStorage.setItem('token',Response.token);
- //     localStorage.setItem('isLogin',"true");
- //     this._AuthService.saveCurrentUser();
- //     this._Router.navigate(['/home']);
- //   }
- //   else {
- //     console.log("xxxxxxxxxxxx")
- //     this.error=true;
- //   }
- // })
+//  this._AuthService.login(loginForm.value).subscribe({
+//    next: (Response)=>{
+//      this.userData = Response;
+//      localStorage.setItem('token',Response.token);
+//      localStorage.setItem('isLogin',"true");
+//      localStorage.setItem('isUser',"true");
+//      this._AuthService.saveCurrentUser();
+//      this._Router.navigate(['/home']);
+//    },
 
- this._AuthService.login(loginForm.value).subscribe({
-   next: (Response)=>{
-     this.userData = Response;
-     localStorage.setItem('token',Response.token);
-     localStorage.setItem('isLogin',"true");
-     localStorage.setItem('isUser',"true");
-     this._AuthService.saveCurrentUser();
-     this._Router.navigate(['/home']);
-   },
-   error:()=>{
-     this.message="Email or Password is not valid";
-     this.error=true;
-     setTimeout(() => {
-       this.error=false;
-     }, 4000);
-   }
- })
+//    error:()=>{
+//      this.message="Email or Password is not valid";
+//      this.error=true;
+//      setTimeout(() =>{
+//        this.error=false;
+//      }, 4000);
+//    }
+//  })
 }
 
 }
