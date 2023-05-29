@@ -38,10 +38,6 @@ const routes: Routes = [
    {path:'class',component:ClassComponent},
    {path:'absence',component:AbsenceComponent},
    
-   {path:'user',component:UserComponent},
-   {path:'create/user',component:CreateUserComponent},
-   {path:'edit/user',component:EditUserComponent},
-   {path:'**',component:NotfoundComponent}
 ]},
   {path:'',component:AuthComponent},
   {path:'**',component:NotfoundComponent}

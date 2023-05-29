@@ -22,24 +22,35 @@ export class AuthComponent {
 })
 submitloginForm(loginForm:FormGroup){
   
-//  this._AuthService.login(loginForm.value).subscribe({
-//    next: (Response)=>{
-//      this.userData = Response;
-//      localStorage.setItem('token',Response.token);
-//      localStorage.setItem('isLogin',"true");
-//      localStorage.setItem('isUser',"true");
-//      this._AuthService.saveCurrentUser();
-//      this._Router.navigate(['/home']);
-//    },
+ this._AuthService.login(loginForm.value).subscribe({
+ 
+   next: (Response)=>{
+     this.userData = Response;
 
-//    error:()=>{
-//      this.message="Email or Password is not valid";
-//      this.error=true;
-//      setTimeout(() =>{
-//        this.error=false;
-//      }, 4000);
-//    }
-//  })
+     
+     if(Response.role==true){
+      localStorage.setItem('token',Response.token);
+      localStorage.setItem('isLogin',"true");
+      localStorage.setItem('isAdmin',"true");
+      this._AuthService.saveCurrentUser();
+      this._Router.navigate(['admin']);
+     }
+     else{
+      localStorage.setItem('token',Response.token);
+      localStorage.setItem('isLogin',"true");
+      localStorage.setItem('isAdmin',"true");
+      this._AuthService.saveCurrentUser();
+      this._Router.navigate(['Teacher']);
+    }
+   },
+   error:()=>{
+     this.message="Email or Password is not valid";
+     this.error=true;
+     setTimeout(() =>{
+       this.error=false;
+     }, 4000);
+   }
+ })
 }
 
 }

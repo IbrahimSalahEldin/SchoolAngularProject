@@ -21,6 +21,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HeaderComponent } from './components/teacher/layout/header/header.component';
 import { FooterComponent } from './components/teacher/layout/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -49,7 +50,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
