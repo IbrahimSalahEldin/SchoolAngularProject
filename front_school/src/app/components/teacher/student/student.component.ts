@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { ApiService }  from 'src/app/services/student/student.service';
-import { environment } from 'src/environments/environment';
+import { StudendService } from 'src/app/services/student/student.service';
+
+
+
 
 @Component({
   selector: 'app-student',
@@ -9,25 +12,30 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit{
-  students!:any;
- 
- 
-  constructor(private Api: ApiService, private http: HttpClient){
+  students?:any;
+  student:any;
+
+  constructor(private http:HttpClient ,private studentService:StudendService){
 
   }
   ngOnInit(): void {
-   this.getBooks();
+   this.getstudents();
   }
 
   
-  getBooks()
+  getstudents()
     {
-      this.Api.get(`${environment.baseUrl}/home/all/page/${this.page}`).subscribe(data=>{
-        this.students=data.data;
-       
-     
-        this.totalPages=data.pages.totalPages;
-        this._pagination=[...Array(this.totalPages).keys()];
+      this.studentService.getAllstudents().subscribe(data=>{
+        this.students = data.documents;
+        console.log(this.students);
       })
     }
+
+    // getStudent(id: string){
+    //   this.studentService.getstudent(id).subscribe(data=>{
+    //     this.student = data;
+    //     console.log(this.student);
+    //   });
+    // }
+
 }

@@ -7,7 +7,8 @@ import { CreateStudentComponent } from './components/admin/student/create-studen
 import { EditStudentComponent } from './components/admin/student/edit-student/edit-student.component';
 import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
 import { CreateUserComponent } from './components/admin/user/create-user/create-user.component';
-import { StudentComponent } from './components/admin/student/student.component';
+
+import { StudentComponent } from './components/teacher/student/student.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { HomeComponent } from './components/teacher/home/home.component';
 import { ClassComponent } from './components/teacher/class/class.component';
@@ -30,7 +31,6 @@ const routes: Routes = [
    {path:'**',component:NotfoundComponent}
    
  ]},
- 
  {path:'Teacher',component:TeacherComponent,children:
  [
    {path:'',component:HomeComponent},

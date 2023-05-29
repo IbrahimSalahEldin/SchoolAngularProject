@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
@@ -8,7 +8,7 @@ import { HomeComponent } from './components/teacher/home/home.component';
 import { CreateUserComponent } from './components/admin/user/create-user/create-user.component';
 import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
 import { UserComponent } from './components/admin/user/user.component';
-import { StudentComponent } from './components/admin/student/student.component';
+import { StudentComponent } from './components/teacher/student/student.component';
 import { CreateStudentComponent } from './components/admin/student/create-student/create-student.component';
 import { EditStudentComponent } from './components/admin/student/edit-student/edit-student.component';
 import { AbsenceComponent } from './components/teacher/absence/absence.component';
@@ -44,14 +44,16 @@ import { HttpClientModule } from '@angular/common/http';
     TeacherComponent,
     NotfoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+      
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
