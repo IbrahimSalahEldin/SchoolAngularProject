@@ -31,7 +31,7 @@ const routes: Routes = [
    
  ]},
  
- {path:'teacher',component:TeacherComponent,children:
+ {path:'',component:TeacherComponent,children:
  [
    {path:'',component:HomeComponent},
    {path:'student',component:StudentComponent},
