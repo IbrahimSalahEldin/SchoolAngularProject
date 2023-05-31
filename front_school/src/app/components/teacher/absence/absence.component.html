@@ -1,1 +1,26 @@
-<p>absence works!</p>
+
+<div class="row">
+    <div
+      class="col-12 col-md-12 col-lg-4 mt-5 mb-5"
+      *ngFor="let item of students" >
+      <div class="card col-12" [routerLink]="['/Teacher/', item?._id]">
+        <img
+          src="http://localhost:5000/{{ item?.img }}"
+          class="card-img-top"
+          alt="Hollywood Sign on The Hill"
+          style="height: 50vh"
+        />
+        <div class="card-body">
+          <h4 class="itemName fs-1" style="color:#3c3484">{{ item?.name }}</h4>
+          <p class="itemName fs-1" style="color:#3c3484">{{ item?.ssn }}</p>
+          <p class="itemName fs-1" style="color:#3c3484">{{ item?.absent }}</p>
+          <p class="itemName fs-1" style="color:#3c3484">{{ item?.report }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+
+

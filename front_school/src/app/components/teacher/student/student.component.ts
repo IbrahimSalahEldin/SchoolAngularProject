@@ -31,11 +31,11 @@ export class StudentComponent implements OnInit{
       })
     }
 
-    // getStudent(id: string){
-    //   this.studentService.getstudent(id).subscribe(data=>{
-    //     this.student = data;
-    //     console.log(this.student);
-    //   });
-    // }
+    getStudent(id: string){
+      this.studentService.getstudent(id).subscribe(data=>{
+        this.student = data;
+        console.log(this.student);
+      });
+    }
 
 }
