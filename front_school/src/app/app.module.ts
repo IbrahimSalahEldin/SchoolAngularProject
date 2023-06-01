@@ -9,8 +9,8 @@ import { CreateUserComponent } from './components/admin/user/create-user/create-
 import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { StudentComponent } from './components/teacher/student/student.component';
-import { CreateStudentComponent } from './components/admin/student/create-student/create-student.component';
-import { EditStudentComponent } from './components/admin/student/edit-student/edit-student.component';
+import { CreateStudentComponent } from './components/admin/studentAdmin/create-student/create-student.component';
+import { EditStudentComponent } from './components/admin/studentAdmin/edit-student/edit-student.component';
 import { AbsenceComponent } from './components/teacher/absence/absence.component';
 import { ClassComponent } from './components/teacher/class/class.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -22,6 +22,11 @@ import { HeaderComponent } from './components/teacher/layout/header/header.compo
 import { FooterComponent } from './components/teacher/layout/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SidenavComponent } from './components/admin/dashboard/sidenav/sidenav.component';
+import { AdminhomeComponent } from './components/admin/dashboard/adminhome/adminhome.component';
+import { HeaderAdminComponent } from './components/admin/dashboard/header-admin/header-admin.component';
+import { BoardComponent } from './components/admin/dashboard/board/board.component';
+import { StudentAdminComponent } from './components/admin/student-admin/student-admin.component';
 
 
 
@@ -33,7 +38,6 @@ import { HttpClientModule } from '@angular/common/http';
     CreateUserComponent,
     EditUserComponent,
     UserComponent,
-    StudentComponent,
     CreateStudentComponent,
     EditStudentComponent,
     AbsenceComponent,
@@ -45,7 +49,12 @@ import { HttpClientModule } from '@angular/common/http';
     NotfoundComponent,
     HeaderComponent,
     FooterComponent,
-      
+    SidenavComponent,
+    AdminhomeComponent,
+    HeaderAdminComponent,
+    BoardComponent,
+    StudentAdminComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,

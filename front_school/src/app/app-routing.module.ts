@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
-import { CreateStudentComponent } from './components/admin/student/create-student/create-student.component';
-import { EditStudentComponent } from './components/admin/student/edit-student/edit-student.component';
+import { CreateStudentComponent } from './components/admin/studentAdmin/create-student/create-student.component';
+import { EditStudentComponent } from './components/admin/studentAdmin/edit-student/edit-student.component';
 import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
 import { CreateUserComponent } from './components/admin/user/create-user/create-user.component';
 
@@ -15,22 +15,32 @@ import { ClassComponent } from './components/teacher/class/class.component';
 import { AbsenceComponent } from './components/teacher/absence/absence.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-
+import { SidenavComponent } from './components/admin/dashboard/sidenav/sidenav.component';
+import { AdminhomeComponent } from './components/admin/dashboard/adminhome/adminhome.component';
+import { HeaderAdminComponent } from './components/admin/dashboard/header-admin/header-admin.component';
+import { BoardComponent } from './components/admin/dashboard/board/board.component';
+import { StudentAdminComponent } from './components/admin/student-admin/student-admin.component';
 const routes: Routes = [
 
   {path:'admin',component:AdminComponent,children:
   [
-  
-   {path:'',component:DashboardComponent},
-   {path:'student',component:StudentComponent},
+   {path:'',component:AdminhomeComponent},
+   {path:'student',component:StudentAdminComponent},
    {path:'create/student',component:CreateStudentComponent},
    {path:'edit/student',component:EditStudentComponent},
    {path:'user',component:UserComponent},
    {path:'create/user',component:CreateUserComponent},
    {path:'edit/user',component:EditUserComponent},
+   {path:'sidnav',component:SidenavComponent},
+   {path:'Adminhome',component:AdminhomeComponent},
+   {path:'headerAdmin',component:HeaderAdminComponent},
+   {path:'Dashboard',component:BoardComponent},
+
    {path:'**',component:NotfoundComponent}
    
  ]},
+
+
  {path:'Teacher',component:TeacherComponent,children:
  [
    {path:'',component:HomeComponent},
