@@ -1,5 +1,5 @@
 .registerButton{
-    background-color: #3C3484;
+    background-color: green;
     color: white;
     border: none;
    width: 80%;
@@ -8,14 +8,15 @@
    font-size: 2vw;
 }
 .registerButton:hover{
-    color: #E1D5D3;
-    background-color: #ED553B;
+    color: white;
+    background-color: rgb(1, 44, 1);
     transform: scale(1.1);
+    
   }
 .design{
     width: 100%;
     height: 25vh;
-    background-color: #e1d5d3;
+    background-color: green;
     border-radius: 0px 0px 1000px 1000px;
 }
 section
@@ -45,12 +46,12 @@ section
     border-right: none;
     border-radius: 0%;
     border-width: 2px;
-    border-color: rgb(248, 90, 33);
+    border-color: green;
   }
 
 .userText
 {
-  color: #3C3484;
+  color: green;
   margin: 4% 0%;
   transition: all 0.8s ease;
   cursor:context-menu;
@@ -67,7 +68,7 @@ section
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  background-color: #3C3484;
+  background-color: green;
   color: #E1D5D3;
   margin: 0% auto;
   transition: all 0.8s ease;
@@ -80,7 +81,7 @@ section
 }
 .logo-user:hover{
     color: #E1D5D3;
-    background-color: #ED553B;
+    background-color: green;
     transform: scale(1.1);
 }
 .logo-user i
@@ -106,7 +107,7 @@ section
   }
   .signUp{
     text-decoration: none;
-    color: #ED553B;
+    color: green;
     font-size:120%;
     font-weight: 600;
     transition: all 0.8s ease;
