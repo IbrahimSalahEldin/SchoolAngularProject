@@ -13,12 +13,18 @@ export class StudendService {
   
   constructor( private Http:HttpClient ){}
 
-
+  addstudents():Observable<any>{
+    return this.Http.post<any>(`${environment.baseUrl}/student/`, {
+    headers : new HttpHeaders().set('Authorization', 'secrt token')
+    })
+    
+  }
 
   getAllstudents():Observable<any>{
     return this.Http.get<any>(`${environment.baseUrl}/student`, {
     headers : new HttpHeaders().set('Authorization', 'secrt token')
     })
+
   }
 
 
@@ -26,8 +32,9 @@ export class StudendService {
       return this.Http.get<any>(`${environment.baseUrl}/student/${studentId}`)
     }
 
-  
-  
+
+
+
 
 }
 

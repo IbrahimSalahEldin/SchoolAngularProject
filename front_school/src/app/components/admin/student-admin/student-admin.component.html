@@ -1,1 +1,39 @@
-<p>student-admin works!</p>
+<div class="container">
+
+<table class="table text-center m-auto mb-2">
+    <thead style=" background-color: #18AF9A;">
+      <tr>
+        <th style="background-color: rgb(237, 237, 237);" colspan="4">
+        </th>
+      </tr>
+      <tr class="text-white">
+        <th>#</th>
+        <th>Photo</th>
+        <th>name</th>
+        <th>ssn</th>
+        <th>address</th>
+        <th>class</th>
+        <th>academic_year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let student of students; let i=index;">
+        <tr>
+          <td class="px-1">{{i+1}}</td>
+          <td  style="width: 4%;">
+            <img src="http://localhost:5000/{{student?.img}}" alt="" class="w-100" style="height: 6vh;">
+          </td>
+          <td>{{student.name}}</td>
+          <td>{{student.ssn}}</td>
+          <td>{{student.address}}</td>
+          <td>{{student.class}}</td>
+          <td>{{student.academic_year}}</td>
+        </tr>
+      </ng-container>
+
+
+
+
+    </tbody>
+  </table>
+</div>
