@@ -17,10 +17,11 @@
 
 /* final header */
 .navbarBackground{
-  background-color: #3C3484;
+  background-color: white;
+
 }
 .navLogo{
-  width: 4rem;
+  width: 5rem;
   
 }
 .navLinks{
@@ -33,18 +34,17 @@ border-bottom: transparent solid 3px;
 
 }
 .nav-item a{
-color: #E1D5D3;
+color: black;
 text-align: center;
 }
 .nav-item:hover{
-background-color:#E1D5D3 ;
-border-radius: 10px;
+background-color:green ;
 border-bottom: gray solid 3px;
-transform: scale(1.1);
+transform: scale(1);
 
 }
 .nav-item a:hover{
-color: #3C3484;
+color: white;
 
 }
 .login{
@@ -93,7 +93,7 @@ color: #3C3484;
     /* padding-left: 1rem; */
   }
   .nav-item a{
-    text-align: left;
+    text-align: center;
   }
   .nav-item{
     /* margin-left: 0; */
@@ -101,13 +101,13 @@ color: #3C3484;
     
   }
   .nav-item:hover{
-    background-color:#3C3484;
+    background-color:green;
     border-radius: 0px;
     border-bottom: none;
     
     }
     .nav-item a:hover{
-      color: #E1D5D3;
+      color: white;
       
       
       }

@@ -1,0 +1,25 @@
+/* second section */
+.ratios{
+    background-color: green;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+.ratios:hover{
+    background-color: rgb(158, 218, 158);
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
+/* third section */
+.imgs{
+    border-radius: 80px;
+    height: 260px;
+    margin-top: 20px;
+}
+.imgs:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
