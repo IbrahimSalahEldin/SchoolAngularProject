@@ -26,7 +26,7 @@ export class StudentComponent implements OnInit{
   getstudents()
     {
       this.studentService.getAllstudents().subscribe(data=>{
-        this.students = data.documents;
+        this.students = data;
         console.log(this.students);
       })
     }
