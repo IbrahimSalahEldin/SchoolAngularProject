@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { StudendService } from 'src/app/services/student/student.service';
 
 @Component({
@@ -10,8 +9,9 @@ import { StudendService } from 'src/app/services/student/student.service';
 })
 export class CreateStudentComponent implements OnInit {
   studentForm!: FormGroup;
+  selectedImage!:File;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient,private studentService:StudendService) { }
+  constructor(private formBuilder: FormBuilder,private _studentService:StudendService) { }
 
   ngOnInit() {
     this.studentForm = this.formBuilder.group({
@@ -23,28 +23,36 @@ export class CreateStudentComponent implements OnInit {
       class: ['', Validators.required],
       father_description: ['', Validators.required],
     });
+
   }
+  uploadImage(event: any) {
+    this.selectedImage=event.target.files[0];
+   }
+
 
   onSubmit() {
-    if (this.studentForm.valid) {
+  
       const formData = new FormData();
       formData.append('name', this.studentForm.value.name);
-      formData.append('img', this.studentForm.value.img);
+      formData.append('img', this.selectedImage,this.selectedImage.name);
       formData.append('ssn', this.studentForm.value.ssn);
       formData.append('academic_year', this.studentForm.value.academic_year);
       formData.append('address', this.studentForm.value.address);
       formData.append('class', this.studentForm.value.class);
-      formData.append('address', this.studentForm.value.father_description);
+      formData.append('father_description', this.studentForm.value.father_description);
 
-      this.studentService.addstudents().subscribe(
+      
+      this._studentService.addstudents(formData).subscribe(
+       
         (response) => {
-          // Handle the response from the Node.js project
+          console.log("fffff");
+          console.log(this.studentForm.value.name );
         },
         (error) => {
-          // Handle any errors
+
+          console.log(this.studentForm.value.name);
         }
       );
     }
   }
-}
 
