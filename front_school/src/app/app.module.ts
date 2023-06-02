@@ -62,7 +62,8 @@ import { StudentAdminComponent } from './components/admin/student-admin/student-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+input.form-control:hover,
+select.form-control:hover,
+textarea.form-control:hover {
+  border-color: rgb(32, 32, 73);
+}
+.custom-file-input {
+    background-color: gray;
+    cursor: pointer;
+  }
+  
+  .custom-file-label::after {
+    background-color: gray;
+  }
