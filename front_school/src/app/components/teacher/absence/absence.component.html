@@ -6,6 +6,7 @@
       <table class="table align-middle mb-0 bg-white col-12 col-md-5 "  >
         <thead style="background-color: rgb(44, 41, 41); color: white;">
           <tr >
+            <th>Photo</th>
             <th>Name</th>
             <th>SSN</th>
             <th>Absent</th>
@@ -15,6 +16,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of students">
+            <td>
+              <img src="http://localhost:5000/uploads/student/{{item?.img}}" alt="" class="w-100" style="height: 6vh;">
+            </td>
             <td>
               <div class="d-flex align-items-center">
                
