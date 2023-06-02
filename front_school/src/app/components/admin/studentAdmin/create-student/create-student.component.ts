@@ -11,7 +11,7 @@ export class CreateStudentComponent implements OnInit {
   studentForm!: FormGroup;
   selectedImage!:File;
 
-  constructor(private formBuilder: FormBuilder,private _studentService:StudendService) { }
+  constructor(private formBuilder: FormBuilder,private studentService:StudendService) { }
 
   ngOnInit() {
     this.studentForm = this.formBuilder.group({
@@ -32,7 +32,7 @@ export class CreateStudentComponent implements OnInit {
 
   onSubmit() {
   
-      const formData = new FormData();
+      let formData = new FormData();
       formData.append('name', this.studentForm.value.name);
       formData.append('img', this.selectedImage,this.selectedImage.name);
       formData.append('ssn', this.studentForm.value.ssn);
@@ -41,18 +41,16 @@ export class CreateStudentComponent implements OnInit {
       formData.append('class', this.studentForm.value.class);
       formData.append('father_description', this.studentForm.value.father_description);
 
-      
-      this._studentService.addstudents(formData).subscribe(
-       
-        (response) => {
-          console.log("fffff");
-          console.log(this.studentForm.value.name );
-        },
-        (error) => {
-
-          console.log(this.studentForm.value.name);
-        }
+      this.studentService.addstudents(formData).subscribe(
+        // (response) => {
+        //   console.log("fffff");
+        //   console.log(this.studentForm.value.name);
+        // },
+        // (error) => {
+        //   console.log(this.studentForm.value.name, "error");
+        // }
       );
+      
     }
   }
 
