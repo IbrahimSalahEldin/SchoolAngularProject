@@ -1,7 +1,7 @@
 <div class="row">
   <h3>first class</h3>
   <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
-    <table class="table align-middle mb-0 bg-white col-12 col-md-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
       <thead style="background-color: rgb(44, 41, 41); color: white">
         <tr>
           <th>Name</th>
@@ -35,73 +35,313 @@
         </tr>
       </tbody>
     </table>
-    <!--       
-       <div *ngIf="item?.academic_year == 'second'">
-
-       </div>
-       <div *ngIf="item?.academic_year == 'third'">
-
-       </div>
     </div>
-    <div *ngIf=" item?.class == 'second'">
-      <div *ngIf="item?.academic_year == 'first'">
-
-      </div>
-      <div *ngIf="item?.academic_year == 'second'">
-
-      </div>
-      <div *ngIf="item?.academic_year == 'third'">
-
-      </div>
-   </div>
-   <div *ngIf=" item?.class == 'third'">
-    <div *ngIf="item?.academic_year == 'first'">
-
+    <!-- academic_year class -->
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <div *ngIf="student?.class === 'first'">
+            <div *ngIf="student?.academic_year === 'second'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ student?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
     </div>
-    <div *ngIf="item?.academic_year == 'second'">
 
-    </div>
-    <div *ngIf="item?.academic_year == 'third'">
-
-    </div>
- </div> -->
-
-    /////////////////
-    <!-- <div *ngIf=" item?.class == 'second'">
-      <h3>second class</h3>
-
-    <div class="card col-12" [routerLink]="['/Teacher/', item?._id]">
-      <img
-        src="http://localhost:5000/{{ item?.img }}"
-        class="card-img-top"
-        alt="Hollywood Sign on The Hill"
-        style="height: 50vh"
-      />
-      <div class="card-body">
-        <h4 class="itemName fs-1" style="color:#3c3484">{{ item?.name }}</h4>
-        <p class="itemName fs-1" style="color:#3c3484">{{ item?.ssn }}</p>
-        <p class="itemName fs-1" style="color:#3c3484">{{ item?.class }}</p>
-      </div>
-    </div>
-  </div>
-  <div *ngIf=" item?.class == ''">
-    <h3>first</h3>
-
-  <div class="card col-12" [routerLink]="['/Teacher/', item?._id]">
-    <img
-      src="http://localhost:5000/{{ item?.img }}"
-      class="card-img-top"
-      alt="Hollywood Sign on The Hill"
-      style="height: 50vh"
-    />
-    <div class="card-body">
-      <h4 class="itemName fs-1" style="color:#3c3484">{{ item?.name }}</h4>
-      <p class="itemName fs-1" style="color:#3c3484">{{ item?.ssn }}</p>
-      <p class="itemName fs-1" style="color:#3c3484">{{ item?.class }}</p>
-    </div>
-  </div>
+    <!-- academic_year class -->
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of students">
+          <div *ngIf="item?.class === 'first'">
+            <div *ngIf="item?.academic_year === 'third'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ item?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div> 
 </div>
+<!-- //////////////////////////////////////// second class //////////////////////////////////////-->
+<div class="row">
+  <h3> Second class</h3>
+  <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of students">
+          <div *ngIf="item?.class === 'second'">
+            <div *ngIf="item?.academic_year === 'first'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ item?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
     </div>
-  </div> -->
-  </div>
+    <!-- academic_year class -->
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <div *ngIf="student?.class === 'second'">
+            <div *ngIf="student?.academic_year === 'second'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ student?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <!-- academic_year class -->
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of students">
+          <div *ngIf="item?.class === 'second'">
+            <div *ngIf="item?.academic_year === 'third'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ item?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div> 
+</div>
+<!-- //////////////////////////////////////////////////// third class ////////////////////////////////////////////////// -->
+<div class="row">
+  <h3>first class</h3>
+  <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of students">
+          <div *ngIf="item?.class === 'third'">
+            <div *ngIf="item?.academic_year === 'first'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ item?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <!-- academic_year class -->
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <div *ngIf="student?.class === 'third'">
+            <div *ngIf="student?.academic_year === 'second'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ student?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ student?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <!-- academic_year class -->
+    <div class="col-12 col-md-12 col-lg-4 mt-5 mb-5">
+    <table class="table align-middle mb-0 bg-white col-4 col-md-4">
+      <thead style="background-color: rgb(44, 41, 41); color: white">
+        <tr>
+          <th>Name</th>
+          <th>SSN</th>
+          <th>Class</th>
+          <th>Academin_Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of students">
+          <div *ngIf="item?.class === 'third'">
+            <div *ngIf="item?.academic_year === 'third'">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ item?.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.ssn }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.class }}</p>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
+              </td>
+            </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div> 
 </div>
