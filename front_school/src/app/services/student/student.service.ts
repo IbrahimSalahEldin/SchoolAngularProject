@@ -23,6 +23,7 @@ export class StudendService {
   
   constructor(private httpClient:HttpClient) { }
 
+  
   get(url: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
