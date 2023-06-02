@@ -7,15 +7,10 @@
           <thead style="background-color: rgb(44, 41, 41); color: white;">
             <tr >
               <th>Name</th>
-              <th>Image</th>
-              <th>Address</th>
               <th>SSN</th>
-              <th>Report</th>
-              <th>Absenece</th>
               <th>Class</th>
               <th>Academin_Year</th>
-              <th>Father_Description</th>
-              <th>_V</th>
+             
             </tr>
           </thead>
           <tbody>
@@ -28,39 +23,21 @@
                   </div>
                 </div>
               </td>
-              <td>
-                <img
-                src="http://localhost:5000/{{ item?.img }}"
-                alt=""
-                style="width: 45px; height: 45px"
-                class="rounded-circle"
-                />
-              </td>
-              <td>
-                <p class="fw-normal mb-1">{{ item?.address }}</p>
-                
-              </td>
+             
+              
               <td>
                 <p class="fw-normal mb-1">{{ item?.ssn }}</p>
               </td>
-            <td> 
-              <p class="fw-normal mb-1">{{ item?.report }}</p>
-            </td>
-              <td>
-                <p class="fw-normal mb-1">{{ item?.absent }}</p>
-              </td>
+           
+              
               <td>
                 <p class="fw-normal mb-1">{{ item?.class }}</p>
               </td>
               <td>
                 <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
               </td>
-              <td>
-                <p class="fw-normal mb-1">{{ item?.father_description }}</p>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">{{ item?.__v }}</p>
-              </td>
+             
+             
             </tr>
          
            
