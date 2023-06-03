@@ -15,4 +15,9 @@ export class TeacherService {
     })
 
   }
+
+
+  getstudent(userId:string):Observable<any>{
+    return this.Http.get<any>(`${environment.baseUrl}/user/${userId}`)
+  }
 }
