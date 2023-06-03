@@ -30,6 +30,7 @@ submitloginForm(loginForm:FormGroup){
      
      if(Response.role==true){
       localStorage.setItem('token',Response.token);
+      localStorage.setItem('name',Response.name);
       localStorage.setItem('isLogin',"true");
       localStorage.setItem('isAdmin',"true");
       this._AuthService.saveCurrentUser();
@@ -37,8 +38,9 @@ submitloginForm(loginForm:FormGroup){
      }
      else{
       localStorage.setItem('token',Response.token);
+      localStorage.setItem('name',Response.name);
       localStorage.setItem('isLogin',"true");
-      localStorage.setItem('isAdmin',"true");
+      localStorage.setItem('isteacher',"true");
       this._AuthService.saveCurrentUser();
       this._Router.navigate(['Teacher']);
     }

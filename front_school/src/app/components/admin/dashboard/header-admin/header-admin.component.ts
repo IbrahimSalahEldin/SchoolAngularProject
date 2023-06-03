@@ -8,15 +8,14 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./header-admin.component.css']
 })
 export class HeaderAdminComponent {
-  firstName:String|null;
-  lastName:string|null;
+  name:String|null;
   @Output()status: EventEmitter<boolean> =  new EventEmitter();
    isShow:boolean;
   constructor(private auth:AuthService,private router:Router)
   {
     this.isShow=true;
-    this.firstName=localStorage.getItem('fName');
-    this.lastName=localStorage.getItem('lName');
+    this.name=localStorage.getItem('name');
+    
   }
 
 
@@ -29,6 +28,5 @@ export class HeaderAdminComponent {
    logout()
    {
     this.auth.logout();
-    this.router.navigate(['/']);
    }
 }

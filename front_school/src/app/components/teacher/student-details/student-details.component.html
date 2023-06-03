@@ -1,0 +1,25 @@
+<section>
+    <div class="container mt-5 mb-5 ">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-12 mb-3">
+                <img src="../../../../assets/4537019.png" alt="" width="400px" height="300px">
+            </div>
+            <div class="col-md-6 col-12 mb-3 data card">
+                <p><span>Name:</span>{{student['name']}}</p>
+                <p><span>SSN:</span>{{student['ssn']}}</p>
+                <p><span>address:</span>{{student['address']}}</p>
+                <p><span>Father Details:</span>{{student['father_description']}}</p>
+                <p><span>Number Of Absent:</span>{{student['absent']}}</p>
+            </div>
+            <div class="col-10 mt-5 mainReport">
+                <p class="Report">Report</p>
+                <p *ngIf="student.absent < 4" class="bg-success p-3"
+                style="color:white; font-weight: 700;"> this student don't have any report </p>
+                <p *ngIf="student.absent >= 4 && student.absent <8" lass="bg-info p-3"
+                    style="color:white; font-weight: 700;"> this student have a one report should be carful and be attend</p>
+                <p *ngIf="student.absent >= 8" lass="bg-danger p-3"
+                    style="color:white; font-weight: 700;"> this student have a two report should if gain a new report will remove from school</p>
+            </div>
+        </div>
+    </div>
+</section>

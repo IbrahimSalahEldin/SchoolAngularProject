@@ -41,15 +41,17 @@ export class CreateStudentComponent implements OnInit {
       formData.append('class', this.studentForm.value.class);
       formData.append('father_description', this.studentForm.value.father_description);
 
-      this.studentService.addstudents(formData).subscribe(
-        // (response) => {
-        //   console.log("fffff");
-        //   console.log(this.studentForm.value.name);
-        // },
-        // (error) => {
-        //   console.log(this.studentForm.value.name, "error");
-        // }
-      );
+      this.studentService.addstudents(formData).subscribe({
+        next: (response) => {
+          console.log("fffff");
+          console.log(response);
+        },
+        error: (error) => {
+          console.log("ddddddddd");
+          console.log(error);
+        }
+      });
+      
       
     }
   }

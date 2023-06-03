@@ -1,63 +1,189 @@
-<div class="row">
-    <div
-      class="col-12 col-md-12 col-lg-4 mt-5 mb-5"
-      *ngFor="let item of students" >
-      <div *ngIf=" item?.class == 'first'">
-        <h3>first class</h3>
-
-      <div class="card col-12" [routerLink]="['/Teacher/', item?._id]">
-        <img
-          src="http://localhost:5000/{{ item?.img }}"
-          class="card-img-top"
-          alt="Hollywood Sign on The Hill"
-          style="height: 50vh"
-        />
-        <div class="card-body">
-          <h4 class="itemName fs-1" style="color:#3c3484">{{ item?.name }}</h4>
-          <p class="itemName fs-1" style="color:#3c3484">{{ item?.ssn }}</p>
-          <p class="itemName fs-1" style="color:#3c3484">{{ item?.class }}</p>
+<section class=" pt-5">
+  <div class="container FirstYear card">
+    <p class="first">First Grad</p>
+    <div class="row">
+    <p class="class1 mt-3">First / First</p>
+    <div class="row card " >
+      <div class="col-12 row main">
+        <p class="col-3">Name</p>
+        <p class="col-3">SSN</p>
+        <p class="col-3">Class</p>
+        <p class="col-3">Academin_Year</p>
+      </div>
+      <div class="firstY col-12 row" *ngFor="let item of firstYear">
+          <div class="firstFirst col-12 row " *ngIf=" item?.class == 'first'" >
+                <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                <p class="col-3">{{ item?.ssn }}</p>
+                <p class="col-3">{{ item?.class }}</p>
+                <p class="col-3">{{ item?.academic_year }}</p>
+          </div>
         </div>
       </div>
     </div>
-    <div *ngIf=" item?.class == 'second'">
-      <h3>second class</h3>
+    <div class="row">
+      <p class="class1 mt-3">First / Second</p>
+      <div class="row card" >
+        <div class="col-12 row main">
+          <p class="col-3">Name</p>
+          <p class="col-3">SSN</p>
+          <p class="col-3">Class</p>
+          <p class="col-3">Academin_Year</p>
+        </div>
+        <div class="firstY col-12 row" *ngFor="let item of firstYear">
+            <div class="firstFirst col-12 row " *ngIf=" item?.class == 'second'" >
+                  <p class="col-3  myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                  <p class="col-3">{{ item?.ssn }}</p>
+                  <p class="col-3">{{ item?.class }}</p>
+                  <p class="col-3">{{ item?.academic_year }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p class="class1 mt-3">First / Third</p>
+        <div class="row card mb-5" >
+          <div class="col-12 row main">
+            <p class="col-3">Name</p>
+            <p class="col-3">SSN</p>
+            <p class="col-3">Class</p>
+            <p class="col-3">Academin_Year</p>
+          </div>
+          <div class="firstY col-12 row" *ngFor="let item of firstYear">
+              <div class="firstFirst col-12 row " *ngIf=" item?.class == 'third'" >
+                    <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                    <p class="col-3">{{ item?.ssn }}</p>
+                    <p class="col-3">{{ item?.class }}</p>
+                    <p class="col-3">{{ item?.academic_year }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
 
-    <div class="card col-12" [routerLink]="['/Teacher/', item?._id]">
-      <img
-        src="http://localhost:5000/{{ item?.img }}"
-        class="card-img-top"
-        alt="Hollywood Sign on The Hill"
-        style="height: 50vh"
-      />
-      <div class="card-body">
-        <h4 class="itemName fs-1" style="color:#3c3484">{{ item?.name }}</h4>
-        <p class="itemName fs-1" style="color:#3c3484">{{ item?.ssn }}</p>
-        <p class="itemName fs-1" style="color:#3c3484">{{ item?.class }}</p>
+<section>
+  <div class="container FirstYear card">
+    <p class="first">Second Grad</p>
+    <div class="row">
+    <p class="class1 mt-3">Second / First</p>
+    <div class="row card " >
+      <div class="col-12 row main">
+        <p class="col-3">Name</p>
+        <p class="col-3">SSN</p>
+        <p class="col-3">Class</p>
+        <p class="col-3">Academin_Year</p>
+      </div>
+      <div class="firstY col-12 row" *ngFor="let item of secondYear">
+          <div class="firstFirst col-12 row " *ngIf=" item?.class == 'first'" >
+                <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                <p class="col-3">{{ item?.ssn }}</p>
+                <p class="col-3">{{ item?.class }}</p>
+                <p class="col-3">{{ item?.academic_year }}</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div *ngIf=" item?.class == ''">
-    <h3>first</h3>
-
-  <div class="card col-12" [routerLink]="['/Teacher/', item?._id]">
-    <img
-      src="http://localhost:5000/{{ item?.img }}"
-      class="card-img-top"
-      alt="Hollywood Sign on The Hill"
-      style="height: 50vh"
-    />
-    <div class="card-body">
-      <h4 class="itemName fs-1" style="color:#3c3484">{{ item?.name }}</h4>
-      <p class="itemName fs-1" style="color:#3c3484">{{ item?.ssn }}</p>
-      <p class="itemName fs-1" style="color:#3c3484">{{ item?.class }}</p>
+    <div class="row">
+      <p class="class1 mt-3">Second / Second</p>
+      <div class="row card" >
+        <div class="col-12 row main">
+          <p class="col-3">Name</p>
+          <p class="col-3">SSN</p>
+          <p class="col-3">Class</p>
+          <p class="col-3">Academin_Year</p>
+        </div>
+        <div class="firstY col-12 row" *ngFor="let item of firstYear">
+            <div class="firstFirst col-12 row " *ngIf=" item?.class == 'second'" >
+                  <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                  <p class="col-3">{{ item?.ssn }}</p>
+                  <p class="col-3">{{ item?.class }}</p>
+                  <p class="col-3">{{ item?.academic_year }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p class="class1 mt-3">Second / Third</p>
+        <div class="row card mb-5" >
+          <div class="col-12 row main">
+            <p class="col-3">Name</p>
+            <p class="col-3">SSN</p>
+            <p class="col-3">Class</p>
+            <p class="col-3">Academin_Year</p>
+          </div>
+          <div class="firstY col-12 row" *ngFor="let item of firstYear">
+              <div class="firstFirst col-12 row " *ngIf=" item?.class == 'third'" >
+                    <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                    <p class="col-3">{{ item?.ssn }}</p>
+                    <p class="col-3">{{ item?.class }}</p>
+                    <p class="col-3">{{ item?.academic_year }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
-</div>
+</section>
+
+
+<section>
+  <div class="container FirstYear card">
+    <p class="first">Third Grad</p>
+    <div class="row">
+    <p class="class1 mt-3">Third / First</p>
+    <div class="row card " >
+      <div class="col-12 row main">
+        <p class="col-3">Name</p>
+        <p class="col-3">SSN</p>
+        <p class="col-3">Class</p>
+        <p class="col-3">Academin_Year</p>
+      </div>
+      <div class="firstY col-12 row" *ngFor="let item of firstYear">
+          <div class="firstFirst col-12 row " *ngIf=" item?.class == 'first'" >
+                <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                <p class="col-3">{{ item?.ssn }}</p>
+                <p class="col-3">{{ item?.class }}</p>
+                <p class="col-3">{{ item?.academic_year }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-{{students|json}}
-  
-
-
-
-
+    <div class="row">
+      <p class="class1 mt-3">Third / Second</p>
+      <div class="row card" >
+        <div class="col-12 row main">
+          <p class="col-3">Name</p>
+          <p class="col-3">SSN</p>
+          <p class="col-3">Class</p>
+          <p class="col-3">Academin_Year</p>
+        </div>
+        <div class="firstY col-12 row" *ngFor="let item of firstYear">
+            <div class="firstFirst col-12 row " *ngIf=" item?.class == 'second'" >
+                  <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                  <p class="col-3">{{ item?.ssn }}</p>
+                  <p class="col-3">{{ item?.class }}</p>
+                  <p class="col-3">{{ item?.academic_year }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p class="class1 mt-3">Third / Third</p>
+        <div class="row card mb-5" >
+          <div class="col-12 row main">
+            <p class="col-3">Name</p>
+            <p class="col-3">SSN</p>
+            <p class="col-3">Class</p>
+            <p class="col-3">Academin_Year</p>
+          </div>
+          <div class="firstY col-12 row" *ngFor="let item of firstYear">
+              <div class="firstFirst col-12 row " *ngIf=" item?.class == 'third'" >
+                    <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
+                    <p class="col-3">{{ item?.ssn }}</p>
+                    <p class="col-3">{{ item?.class }}</p>
+                    <p class="col-3">{{ item?.academic_year }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>

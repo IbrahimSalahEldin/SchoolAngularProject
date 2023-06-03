@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/model/user';
-
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -39,6 +38,9 @@ export class AuthService {
     localStorage.removeItem('token')
     localStorage.removeItem('isLogin')
     localStorage.removeItem('isUser')
-    this._Router.navigate(['/login']);
+    localStorage.removeItem('isAdmin')
+    localStorage.removeItem('name')
+    localStorage.removeItem('isteacher')
+    this._Router.navigate(['/']);
   }
 }

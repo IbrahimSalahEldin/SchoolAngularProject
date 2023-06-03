@@ -7,20 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class StudendService {
 
-
-
-
-  
-  // constructor( private Http:HttpClient ){}
-
-  // addstudents(data :any):Observable<any>{
-    // return this.httpClient.post<any>(`${environment.baseUrl}/student/`, {
-    // headers : new HttpHeaders().set('Authorization', 'secrt token')
-    // })
-    
-  // }
-
-  
+ 
   constructor(private httpClient:HttpClient) { }
 
   
@@ -39,27 +26,17 @@ export class StudendService {
   
   addstudents(data:any): Observable<any>{
     console.log('success');
-    return this.httpClient.post(`${environment.baseUrl}/student/`,data
-    )
-    
-    
-  }
+    return this.httpClient.post(`${environment.baseUrl}/student/`,data )
+   }
 
   getAllstudents():Observable<any>{
-    return this.httpClient.get<any>(`${environment.baseUrl}/student`, {
-    headers : new HttpHeaders().set('Authorization', 'secrt token')
-    })
-
+    return this.httpClient.get<any>(`${environment.baseUrl}/student`)
   }
 
 
   getstudent(studentId:string):Observable<any>{
       return this.httpClient.get<any>(`${environment.baseUrl}/student/${studentId}`)
     }
-
-
-
-
 
 }
 

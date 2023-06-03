@@ -27,6 +27,7 @@ import { AdminhomeComponent } from './components/admin/dashboard/adminhome/admin
 import { HeaderAdminComponent } from './components/admin/dashboard/header-admin/header-admin.component';
 import { BoardComponent } from './components/admin/dashboard/board/board.component';
 import { StudentAdminComponent } from './components/admin/student-admin/student-admin.component';
+import { StudentDetailsComponent } from './components/teacher/student-details/student-details.component';
 
 
 
@@ -54,7 +55,8 @@ import { StudentAdminComponent } from './components/admin/student-admin/student-
     HeaderAdminComponent,
     BoardComponent,
     StudentAdminComponent,
-    StudentComponent
+    StudentComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@
               <th>SSN</th>
               <th>Class</th>
               <th>Academin_Year</th>
+              <th>address</th>
              
             </tr>
           </thead>
@@ -19,7 +20,7 @@
                 <div class="d-flex align-items-center">
                  
                   <div class="ms-3">
-                    <p class="fw-bold mb-1">{{ item?.name }}</p>
+                    <p class="fw-bold mb-1 myname" [routerLink]="[ item._id]">{{ item?.name }}</p>
                   </div>
                 </div>
               </td>
@@ -36,7 +37,9 @@
               <td>
                 <p class="fw-normal mb-1">{{ item?.academic_year }}</p>
               </td>
-             
+              <td>
+                <p class="fw-normal mb-1">{{ item?.address }}</p>
+              </td>
              
             </tr>
          

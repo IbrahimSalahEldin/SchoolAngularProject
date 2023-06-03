@@ -7,7 +7,6 @@ import { CreateStudentComponent } from './components/admin/studentAdmin/create-s
 import { EditStudentComponent } from './components/admin/studentAdmin/edit-student/edit-student.component';
 import { EditUserComponent } from './components/admin/user/edit-user/edit-user.component';
 import { CreateUserComponent } from './components/admin/user/create-user/create-user.component';
-
 import { StudentComponent } from './components/teacher/student/student.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { HomeComponent } from './components/teacher/home/home.component';
@@ -20,21 +19,24 @@ import { AdminhomeComponent } from './components/admin/dashboard/adminhome/admin
 import { HeaderAdminComponent } from './components/admin/dashboard/header-admin/header-admin.component';
 import { BoardComponent } from './components/admin/dashboard/board/board.component';
 import { StudentAdminComponent } from './components/admin/student-admin/student-admin.component';
+import {StudentDetailsComponent} from './components/teacher/student-details/student-details.component'
+import { AuthGuard } from './auth.guard';
+import { AuthAdminGuard } from './auth-admin.guard';
 const routes: Routes = [
 
   {path:'admin',component:AdminComponent,children:
   [
-   {path:'',component:AdminhomeComponent},
-   {path:'student',component:StudentAdminComponent},
-   {path:'create/student',component:CreateStudentComponent},
-   {path:'edit/student',component:EditStudentComponent},
-   {path:'user',component:UserComponent},
-   {path:'create/user',component:CreateUserComponent},
-   {path:'edit/user',component:EditUserComponent},
-   {path:'sidnav',component:SidenavComponent},
-   {path:'Adminhome',component:AdminhomeComponent},
-   {path:'headerAdmin',component:HeaderAdminComponent},
-   {path:'Dashboard',component:BoardComponent},
+   {path:'',canActivate:[AuthAdminGuard],component:AdminhomeComponent},  
+   {path:'student',canActivate:[AuthAdminGuard],component:StudentAdminComponent},
+   {path:'create/student',canActivate:[AuthAdminGuard],component:CreateStudentComponent},
+   {path:'edit/student',canActivate:[AuthAdminGuard],component:EditStudentComponent},
+   {path:'user',canActivate:[AuthAdminGuard],component:UserComponent},
+   {path:'create/user',canActivate:[AuthAdminGuard],component:CreateUserComponent},
+   {path:'edit/user',canActivate:[AuthAdminGuard],component:EditUserComponent},
+   {path:'sidnav',canActivate:[AuthAdminGuard],component:SidenavComponent},
+   {path:'Adminhome',canActivate:[AuthAdminGuard],component:AdminhomeComponent},
+   {path:'headerAdmin',canActivate:[AuthAdminGuard],component:HeaderAdminComponent},
+   {path:'Dashboard',canActivate:[AuthAdminGuard],component:BoardComponent},
 
    {path:'**',component:NotfoundComponent}
    
@@ -42,10 +44,11 @@ const routes: Routes = [
 
  {path:'Teacher',component:TeacherComponent,children:
  [
-   {path:'',component:HomeComponent},
-   {path:'student',component:StudentComponent},
-   {path:'class',component:ClassComponent},
-   {path:'absence',component:AbsenceComponent},
+   {path:'',canActivate:[AuthGuard] ,component:HomeComponent},
+   {path:'student',canActivate:[AuthGuard],component:StudentComponent},
+   {path:'class',canActivate:[AuthGuard],component:ClassComponent},
+   {path:'absence',canActivate:[AuthGuard],component:AbsenceComponent},
+   {path:'student/:id',canActivate:[AuthGuard],component:StudentDetailsComponent}
    
 ]},
   {path:'',component:AuthComponent},
