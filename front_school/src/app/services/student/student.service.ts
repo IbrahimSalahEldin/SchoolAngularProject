@@ -20,10 +20,8 @@ export class StudendService {
     return this.httpClient.get(`${url}`, {
       headers
     });
-
   }
 
-  
   addstudents(data:any): Observable<any>{
     console.log('success');
     return this.httpClient.post(`${environment.baseUrl}/student/`,data )
