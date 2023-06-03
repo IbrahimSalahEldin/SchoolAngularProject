@@ -1,5 +1,5 @@
 
-<div class="container">
+<!-- <div class="container">
     <div class="row d-flex justify-content-center">
         <form [formGroup]="studentForm" (ngSubmit)="onSubmit()"novalidate class="form w-75 mb-5">
             <div class="form-group mb-2 ">
@@ -21,7 +21,7 @@
             <div class="form-group mb-2">
               <label for="class">Class:</label>
               <select id="class" class="form-control " formControlName="class"  required>
-                <option value="">Select Class</option>
+                <option value="first">Select Class</option>
                 <option value="first">First</option>
                 <option value="second">Second</option>
                 <option value="third">Third</option>
@@ -31,7 +31,7 @@
             <div class="form-group mb-2 ">
               <label for="academic_year">academic_year:</label>
               <select id="academic_year" class="form-control" formControlName="academic_year" required>
-                <option value="">Select Year</option>
+                <option value="first">Select Year</option>
                 <option value="first">First</option>
                 <option value="second">Second</option>
                 <option value="third">Third</option>
@@ -52,6 +52,75 @@
             <button type="submit" class="btn btn-primary">Create Student</button>
         </form>
     </div>
-</div>
+</div> -->
 
-  
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="w-75 m-auto py-3 card">
+              <!-- <div class="alert alert-danger" *ngIf="error">
+                  <p>{{message}}</p>
+              </div> -->
+              <form [formGroup]='studentForm' (ngSubmit)='onSubmit()'>
+                  <div class="form-group py-2">
+                      <input formControlName='name' class="form-control" placeholder="Enter name" type="text" name="first_name" id="firs_name">
+                      <!-- Validation messages -->
+                      <div class="alert alert-danger my-2" *ngIf="studentForm.get('name')?.errors != null && studentForm.get('name')?.touched">
+                          <p *ngIf="studentForm.get('name')?.errors?.['required']">Name is required</p>
+                          <p *ngIf="studentForm.get('name')?.errors?.['minlength']">Min Length is 20</p>
+                          <p *ngIf="studentForm.get('name')?.errors?.['maxlength']">Max Length is 50</p>
+                      </div>
+                  </div>
+                  <div class="form-group py-2">
+                      <input formControlName='ssn' class="form-control" type="text" placeholder="Enter your SSN:" name="ssn" id="ssn">
+                      <!-- Validation messages -->
+                      <div class="alert alert-danger my-2" *ngIf="studentForm.get('ssn')?.errors != null && studentForm.get('ssn')?.touched">
+                          <p *ngIf="studentForm.get('ssn')?.errors?.['required']">ssn is required</p>
+                          <p *ngIf="studentForm.get('ssn')?.errors?.['minlength']">Min Length is 14</p>
+                      </div>
+                  </div>
+                  <div class="form-group py-2">
+                      <input formControlName='address' class="form-control" type="text" name="password" placeholder="Enter your address" id="address">
+                      <!-- Validation messages -->
+                      <div class="alert alert-danger my-2" *ngIf="studentForm.get('password')?.errors != null && studentForm.get('address')?.touched">
+                          <p *ngIf="studentForm.get('address')?.errors?.['required']">Password is required</p>
+                          <p *ngIf="studentForm.get('address')?.errors?.['minlength']">Min Length is 8</p>
+                      </div>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label for="class">Class:</label>
+                    <select id="class" class="form-control " formControlName="class"  required>
+                      <option value="first">Select Class</option>
+                      <option value="first">First</option>
+                      <option value="second">Second</option>
+                      <option value="third">Third</option>
+                    </select>
+                  </div>
+                
+                  <div class="form-group mb-2 ">
+                    <label for="academic_year">academic_year:</label>
+                    <select id="academic_year" class="form-control" formControlName="academic_year" required>
+                      <option value="first">Select Year</option>
+                      <option value="first">First</option>
+                      <option value="second">Second</option>
+                      <option value="third">Third</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label for="father_description">Father Description:</label>
+                    <textarea id="father_description" class="form-control " formControlName="father_description"
+                     required></textarea>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="file" class="form-control" name="img" formControlName="img" accept=".png, .jpg, .jpeg" (change)="uploadImage($event)">
+                  </div>
+
+                  <div class="m-auto py-5 d-flex justify-content-center">
+                      <button class="mt-2 btn btn-info registerButton position-absolute mt-1 mx-1" type="submit" [disabled]="studentForm.invalid">Add Student</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>

@@ -36,6 +36,14 @@ export class StudendService {
       return this.httpClient.get<any>(`${environment.baseUrl}/student/${studentId}`)
     }
 
+    editStudent(data: any, studentId: any): Observable<any> {
+      return this.httpClient.put<any>(`${environment.baseUrl}/student/${studentId}`, data);
+    }
+
+    deleteStudent(userId:string):Observable<any>{
+      return this.httpClient.delete<any>(`${environment.baseUrl}/student/${userId}`);
+    }
+
 }
 
 

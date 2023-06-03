@@ -14,6 +14,8 @@
         <th>address</th>
         <th>class</th>
         <th>academic_year</th>
+        <th>absence</th>
+        <th>action</th>
       </tr>
     </thead>
     <tbody>
@@ -28,12 +30,15 @@
           <td>{{student.address}}</td>
           <td>{{student.class}}</td>
           <td>{{student.academic_year}}</td>
+          <td>{{student.absent}}</td>
+          <td>
+            <button class="btn" (click)="deleteStudent(student._id)"><i class="fa fa-trash text-danger"></i></button>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#EditModal" (click)="showStudent(student)"><i class="fa fa-edit text-primary"></i></button>
+          </td>
         </tr>
       </ng-container>
-
-
-
-
     </tbody>
   </table>
 </div>
+
+<app-edit-student (isEdit)="receivedEditUser($event)" [student]="eStudent"></app-edit-student>

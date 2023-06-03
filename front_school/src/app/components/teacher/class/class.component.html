@@ -92,7 +92,7 @@
           <p class="col-3">Class</p>
           <p class="col-3">Academin_Year</p>
         </div>
-        <div class="firstY col-12 row" *ngFor="let item of firstYear">
+        <div class="firstY col-12 row" *ngFor="let item of secondYear">
             <div class="firstFirst col-12 row " *ngIf=" item?.class == 'second'" >
                   <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
                   <p class="col-3">{{ item?.ssn }}</p>
@@ -111,7 +111,7 @@
             <p class="col-3">Class</p>
             <p class="col-3">Academin_Year</p>
           </div>
-          <div class="firstY col-12 row" *ngFor="let item of firstYear">
+          <div class="firstY col-12 row" *ngFor="let item of secondYear">
               <div class="firstFirst col-12 row " *ngIf=" item?.class == 'third'" >
                     <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
                     <p class="col-3">{{ item?.ssn }}</p>
@@ -137,7 +137,7 @@
         <p class="col-3">Class</p>
         <p class="col-3">Academin_Year</p>
       </div>
-      <div class="firstY col-12 row" *ngFor="let item of firstYear">
+      <div class="firstY col-12 row" *ngFor="let item of thirdYear">
           <div class="firstFirst col-12 row " *ngIf=" item?.class == 'first'" >
                 <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
                 <p class="col-3">{{ item?.ssn }}</p>
@@ -156,7 +156,7 @@
           <p class="col-3">Class</p>
           <p class="col-3">Academin_Year</p>
         </div>
-        <div class="firstY col-12 row" *ngFor="let item of firstYear">
+        <div class="firstY col-12 row" *ngFor="let item of thirdYear">
             <div class="firstFirst col-12 row " *ngIf=" item?.class == 'second'" >
                   <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
                   <p class="col-3">{{ item?.ssn }}</p>
@@ -175,7 +175,7 @@
             <p class="col-3">Class</p>
             <p class="col-3">Academin_Year</p>
           </div>
-          <div class="firstY col-12 row" *ngFor="let item of firstYear">
+          <div class="firstY col-12 row" *ngFor="let item of thirdYear">
               <div class="firstFirst col-12 row " *ngIf=" item?.class == 'third'" >
                     <p class="col-3 myname"[routerLink]="['/Teacher/student/', item._id]">{{ item?.name }}</p>
                     <p class="col-3">{{ item?.ssn }}</p>

@@ -13,6 +13,7 @@
             <th>name</th>
             <th>email</th>
             <th>rule</th>
+            <th>action</th>
           </tr>
         </thead>
         <tbody>
@@ -20,7 +21,7 @@
             <tr>
               <td class="px-1">{{i+1}}</td>
               <td  style="width: 4%;">
-                <img src="http://localhost:5000/{{user?.img}}" alt="" class="w-100" style="height: 6vh;">
+                <img src="http://localhost:5000/uploads/user/{{user?.img}}" alt="" class="w-100" style="height: 6vh;">
               </td>
               <td>{{user.name}}</td>
               <td>{{user.email}}</td>
@@ -30,9 +31,16 @@
               <ng-template #teacherRole>
                 <td>teacher</td>
               </ng-template>
+              <td>
+                <button class="btn" (click)="deleteUser(user._id)"><i class="fa fa-trash text-danger"></i></button>
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#EditModal" (click)="showUser(user)"><i class="fa fa-edit text-primary"></i></button>
+              </td>
               
             </tr>
           </ng-container>    
         </tbody>
       </table>
     </div>
+
+    <!---------------------Edit user----------------------------->
+<app-edit-user (isEdit)="receivedEditUser($event)" [user]="eUser"></app-edit-user>

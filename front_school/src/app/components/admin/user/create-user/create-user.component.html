@@ -1,1 +1,53 @@
-<p>create-user works!</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="w-75 m-auto py-3 card">
+                <!-- <div class="alert alert-danger" *ngIf="error">
+                    <p>{{message}}</p>
+                </div> -->
+                <form [formGroup]='registerForm' (ngSubmit)='submitRegisterForm()'>
+                    <div class="form-group py-2">
+                        <input formControlName='name' class="form-control" placeholder="Enter name" type="text" name="first_name" id="firs_name">
+                        <!-- Validation messages -->
+                        <div class="alert alert-danger my-2" *ngIf="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched">
+                            <p *ngIf="registerForm.get('name')?.errors?.['required']">First Name is required</p>
+                            <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Min Length is 20</p>
+                            <p *ngIf="registerForm.get('name')?.errors?.['maxlength']">Max Length is 50</p>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <input formControlName='email' class="form-control" type="email" placeholder="Enter your Email" name="email" id="email">
+                        <!-- Validation messages -->
+                        <div class="alert alert-danger my-2" *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched">
+                            <p *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</p>
+                            <p *ngIf="registerForm.get('email')?.errors?.['pattern']">Please provide a valid email address</p>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <input formControlName='password' class="form-control" type="password" name="password" placeholder="Enter your password" id="password">
+                        <!-- Validation messages -->
+                        <div class="alert alert-danger my-2" *ngIf="registerForm.get('password')?.errors != null && registerForm.get('password')?.touched">
+                            <p *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</p>
+                            <p *ngIf="registerForm.get('password')?.errors?.['minlength']">Min Length is 8</p>
+                        </div>
+                    </div>
+                    <div class="form-group py-2">
+                        <label for="role">Role:</label>
+                        <select id="role" class="form-control" formControlName="role">
+                            <option value="false">Select Role</option>
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="img" formControlName="img" accept=".png, .jpg, .jpeg" (change)="uploadImage($event)">
+                    </div>
+
+                    <div class="m-auto py-5 d-flex justify-content-center">
+                        <button class="mt-2 btn btn-info registerButton position-absolute mt-1 mx-1" type="submit" [disabled]="registerForm.invalid">Add user</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

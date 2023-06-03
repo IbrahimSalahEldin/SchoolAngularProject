@@ -26,7 +26,7 @@ const routes: Routes = [
 
   {path:'admin',component:AdminComponent,children:
   [
-   {path:'',canActivate:[AuthAdminGuard],component:AdminhomeComponent},  
+   {path:'',canActivate:[AuthAdminGuard],component:BoardComponent},  
    {path:'student',canActivate:[AuthAdminGuard],component:StudentAdminComponent},
    {path:'create/student',canActivate:[AuthAdminGuard],component:CreateStudentComponent},
    {path:'edit/student',canActivate:[AuthAdminGuard],component:EditStudentComponent},
